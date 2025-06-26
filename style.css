@@ -1,0 +1,452 @@
+/* Container geral para centralizar e limitar largura */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Estilos base do corpo da página */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #f5f3f3;
+  background-color: #1b1b1b;
+}
+
+/* Cabeçalho fixo no topo */
+header {
+  background-color: #001D3D;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* Container do header para alinhamento */
+.header-container {
+  height: 100px;
+  max-width: 1200px;
+  margin: 0 auto; /* centraliza o header */
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.logo-header {
+  height: 100px;
+  flex-shrink: 0;
+   transform: scale(1.0);
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* HERO (INÍCIO) */
+.hero {
+  padding: 0;
+}
+
+/* SEÇÃO INÍCIO - layout imagem à esquerda e texto à direita */
+.inicio-flex {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  min-height: 500px;
+  background-color: #1b1b1b;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.inicio-imagem {
+  flex: 1;
+  width: 50%;
+  height: 90%;
+  object-fit: cover;
+  min-height: 500px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 8px;
+}
+
+.inicio-texto {
+  flex: 1;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 60px;
+  box-sizing: border-box;
+  color: #ffffff;
+  background-color: #222;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.inicio-texto h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #f1f1f1;
+  font-weight: 700;
+}
+
+.inicio-texto p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #ccc;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .inicio-flex {
+    flex-wrap: wrap;
+    min-height: auto;
+    max-width: 100%;
+  }
+
+  .inicio-imagem,
+  .inicio-texto {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+  }
+
+  .inicio-imagem {
+    min-height: 300px;
+  }
+
+  .inicio-texto {
+    padding: 20px;
+  }
+
+  .inicio-texto h2 {
+    font-size: 2rem;
+  }
+
+  .inicio-texto p {
+    font-size: 1rem;
+  }
+}
+
+/* Conteúdo padrão */
+.content {
+  padding: 40px 0;
+  /* padding lateral removido para respeitar o container */
+}
+
+.content h2 {
+  text-align: center;
+  color: #f1f1f1;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.content p {
+  text-align: justify;
+  color: #e0e0e0;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  position: relative;
+  width: 215px;
+  height: 280px; /* altura maior para melhor acomodar o texto */
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%; /* corrigido para 100% */
+  background: rgba(28, 28, 28, 0.9);
+  color: white;
+  padding: 20px 15px;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  max-height: 150px;  /* Limite de altura para o texto */
+  overflow-y: auto;   /* Scroll interno se texto for longo */
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card:hover .card-content {
+  transform: translateY(0);
+}
+
+.card-content h3 {
+  margin: 0 0 12px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.card-content p {
+  text-align: center; /* centraliza o texto linha a linha */
+  margin: 0;
+  font-size: 0.9rem;    /* fonte legível */
+  line-height: 1.2;   /* espaçamento confortável entre linhas */
+  letter-spacing: 0.02em;
+}
+
+/* Galeria */
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+.gallery img {
+  height: 200px;
+  border-radius: 10px;
+}
+
+/* Formulário de contato */
+.contato-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto; /* centraliza o formulário */
+  padding: 0 20px;
+}
+
+.contato-form input,
+.contato-form textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #000;
+  background-color: #fff;
+}
+
+.contato-form input::placeholder,
+.contato-form textarea::placeholder {
+  color: #555;
+}
+
+.contato-form button {
+  background-color: #0c1b2a;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contato-form button:hover {
+  background-color: #142d45;
+}
+
+/* Rodapé */
+footer {
+  background-color: #0c1b2a;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* WhatsApp flutuante */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  font-size: 28px;
+  padding: 10px 16px;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: background-color 0.3s;
+}
+
+.whatsapp-float:hover {
+  background-color: #128C7E;
+}
+
+/* Seções coloridas */
+#inicio,
+#sobre,
+#atuacao,
+#galeria,
+#contato,
+#localizacao {
+  width: 100%;
+}
+
+/* Ajustes para cada seção */
+#inicio {
+  background-color: #1b1b1b;
+  color: #ffffff;
+}
+
+#sobre {
+  background-color: #1b1b1b;
+  color: #ffffff;
+}
+
+#sobre h2 {
+  color: #f1f1f1;
+}
+
+#sobre .container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#atuacao {
+  background-color: #2C3333;
+  color: #ffffff;
+}
+
+#atuacao h2 {
+  color: #f9f9f9;
+}
+
+#galeria {
+  background-color: #393E46;
+  color: #ffffff;
+}
+
+#galeria h2 {
+  color: #f9f9f9;
+}
+
+#contato {
+  background-color: #1F2833;
+  color: #ffffff;
+}
+
+#contato h2 {
+  color: #f9f9f9;
+}
+
+/* Localização */
+#localizacao {
+  background-color: #1a2b3c;
+  color: #f1f1f1;
+  padding: 60px 20px;
+}
+
+#localizacao h2 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.localizacao-intro {
+  text-align: center;
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+.localizacao-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 30px;
+}
+
+.localizacao-texto {
+  max-width: 400px;
+  font-size: 17px;
+  line-height: 1.7;
+  text-align: left;
+  color: #dcdcdc;
+}
+
+.localizacao-texto p {
+  margin-bottom: 10px;
+}
+
+.localizacao-texto a {
+  color: #88ccff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.localizacao-texto a:hover {
+  text-decoration: underline;
+}
+
+.localizacao-mapa iframe {
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 420px;
+  height: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.sec-mapa {
+  background-color: #1a2b3c;
+  color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.sec-mapa h3 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+#map {
+  width: 50%; /* 50% da largura da tela */
+  margin: 0 auto; /* centraliza horizontalmente */
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+#map iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 10px;
+}
