@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Criação do botão flutuante de WhatsApp
   const whatsappBtn = document.createElement('a');
-  whatsappBtn.href = 'https://wa.me/5511976263651';
-  whatsappBtn.target = '_blank';
-  whatsappBtn.className = 'whatsapp-float';
-  whatsappBtn.innerHTML = '📱';
-  document.body.appendChild(whatsappBtn);
+whatsappBtn.href = 'https://wa.me/5511976263651';
+whatsappBtn.target = '_blank';
+whatsappBtn.className = 'whatsapp-float';
+whatsappBtn.innerHTML = '<img src="imagens/3d-fluency-whatsapp-logo.png" alt="WhatsApp" style="width: 60px; height: 60px;">';
+document.body.appendChild(whatsappBtn);
 });
